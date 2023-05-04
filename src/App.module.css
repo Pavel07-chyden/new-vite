@@ -27,8 +27,9 @@
 .header_item:first-child {
 	margin-right: 60px;
 }
-.header_item:hover {
-	background: red;
+.active:hover {
+	color: var(--Blue-Main-500);
+	cursor: pointer;
 }
 
 .menu {

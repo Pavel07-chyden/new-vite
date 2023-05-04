@@ -3,7 +3,7 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import './App.css'
 import s from './App.module.css'
 import Header from './components/Header/Header'
-import { UnionIcon } from './components/Icons/UnionIcon'
+import githubIcon from './components/put/assets/union.svg'
 import { Favorites } from './pages/Favorites'
 import { FavoritesEmpty } from './pages/FavoritesEmpty'
 import { JobPage } from './pages/JobPage/JobPage'
@@ -13,9 +13,10 @@ const App: FC = () => {
 		<BrowserRouter>
 			<div className={s.header}>
 				<div className={s.logo_svg}>
-					<UnionIcon />
+					<img src={githubIcon} alt='union' />
 					Jobored
 				</div>
+
 				<ul className={s.header_menu}>
 					<li className={s.header_item}>
 						<NavLink className={s.active} to='/jobPage'>
