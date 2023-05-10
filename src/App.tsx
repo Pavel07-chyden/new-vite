@@ -6,6 +6,7 @@ import {
 	H1,
 	H3,
 	Headers,
+	ImgIcon,
 	Item,
 	LogoSvg,
 	Menu,
@@ -13,8 +14,7 @@ import {
 } from './App.style'
 import Header from './components/Header/Header'
 import githubIcon from './components/put/assets/union.svg'
-import { Favorites } from './pages/Favorites'
-import { FavoritesEmpty } from './pages/FavoritesEmpty'
+import { FavoritesEmpty } from './pages/Favorites/FavoritesEmpty'
 import { JobPage } from './pages/JobPage/JobPage'
 
 const App: FC = () => {
@@ -22,7 +22,7 @@ const App: FC = () => {
 		<BrowserRouter>
 			<Headers>
 				<LogoSvg>
-					<img src={githubIcon} alt='union' />
+					<ImgIcon src={githubIcon} alt='union' />
 					<H1>Jobored</H1>
 				</LogoSvg>
 				<Menu>
@@ -42,7 +42,7 @@ const App: FC = () => {
 				<Routes>
 					<Route path='/' element={<Header />} />
 					<Route path='/jobPage' element={<JobPage />} />
-					<Route path='/favorites' element={<Favorites />} />
+					<Route path='/favorites' element={<FavoritesEmpty />} />
 					<Route path='/favorites-empty' element={<FavoritesEmpty />} />
 				</Routes>
 			</Body>

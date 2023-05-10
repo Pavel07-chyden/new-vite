@@ -74,7 +74,7 @@ export const Close = styled.div`
 	&:before {
 		position: absolute;
 		top: -12px;
-		right: -7px;
+		right: -11px;
 		content: '';
 		width: 1px;
 		height: 9px;
