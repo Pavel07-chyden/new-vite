@@ -52,5 +52,4 @@ export const H3 = styled.h3`
 
 export const Body = styled.div`
 	background-color: var(--Grey-100);
-	margin-top: 40px;
 `

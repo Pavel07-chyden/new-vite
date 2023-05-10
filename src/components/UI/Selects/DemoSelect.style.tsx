@@ -6,7 +6,9 @@ export const Wrapper = styled.div`
 	margin: 0 auto;
 `
 export const Container = styled.div`
+	padding-top: 40px;
 	display: flex;
+	justify-content: center;
 `
 export const ContainerFilter = styled.div`
 	padding: 20px;
@@ -141,6 +143,7 @@ export const InfoMap = styled.div`
 	gap: 11px;
 `
 export const City = styled.p`
+	display: inline-block;
 	font-weight: 400;
 	font-size: 16px;
 `
