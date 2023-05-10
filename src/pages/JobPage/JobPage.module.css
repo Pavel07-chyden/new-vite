@@ -3,7 +3,7 @@
 	justify-content: space-between;
 	align-items: center;
 	height: 84px;
-	background-color: var(--white);
+	background-color: var(--Grey-100);
 	border-bottom: 1px solid var(--white);
 	width: 100%;
 }

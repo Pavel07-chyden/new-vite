@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,400italic,500,500italic,600,600italic,700,700italic&display=swap');
 :root {
 	--primary: cornflowerblue;
 	--dark: #333;
@@ -32,13 +33,11 @@ body {
 	font-family: 'Inter', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: var(--Grey-100);
-	color: var(--black);
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
+	background: var(--Grey-100);
 }
-
-a {
-	color: var(--black);
+code {
+	font-family: Poppins, Open Snans;
 }

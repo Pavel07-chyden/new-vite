@@ -1,32 +1,89 @@
+import { Pagination } from '@mantine/core'
 import { FC } from 'react'
-import s from './JobPage.module.css'
+import { Button } from '../../components/UI/Button/StyleButton'
+
+import { InputSearch } from '../../components/UI/Input/InputSearch'
+import { DemoSelect } from '../../components/UI/Selects/DemoSelect'
+import {
+	City,
+	Close,
+	Container,
+	ContainerFilter,
+	GeneralLink,
+	ImgStar,
+	InfoItems,
+	InfoLink,
+	InfoMap,
+	InfoText,
+	InnerContent,
+	InputHeader,
+	JobInfo,
+	Li,
+	LinkTitle,
+	ListJob,
+	Pages,
+	ResetAll,
+	TextLink,
+	Titile,
+	TitleOne,
+	Ul,
+	Wages,
+	Wrapper,
+} from '../../components/UI/Selects/DemoSelect.style'
+import { ChoiceBefore } from '../../components/UI/Selects/SelectBefore'
+import { ChoiceFrom } from '../../components/UI/Selects/SelectChoice'
+import githubIconMap from '/src/components/put/assets/map.svg'
+import githubIcon from '/src/components/put/assets/starFalse.svg'
 
 export const JobPage: FC = () => {
 	return (
-		<div className={s.wrapper}>
-			<div className={s.items}>
-				<div className={s.filter}>
-					<div className={s.container_title}>
-						<h2 className={s.filter_title}>Фильтры</h2>
-						<button className={s.reset_all}>
-							Сбросить все
-							<>X</>
-						</button>
-					</div>
-					<div className={s.container_choice}>
-						<h3 className={s.industry_title}>Отрасль</h3>
-						<input className={s.title} placeholder='Выбрать отрасль'></input>
-					</div>
-					<div className={s.container_salary}>
-						<h3 className={s.industry_title}>Оклад</h3>
-						<input className={s.from_input} placeholder='От'></input>
-						<input className={s.before_input} placeholder='Да'></input>
-					</div>
-				</div>
+		<Wrapper>
+			<Container>
+				<ContainerFilter>
+					<ResetAll>
+						<TitleOne>Фильтры</TitleOne>
+						<GeneralLink>
+							<TextLink>Сбросить все</TextLink>
+							<Close />
+						</GeneralLink>
+					</ResetAll>
+					<Titile>Отрасль</Titile>
+					<DemoSelect />
+					<Titile>Оклад</Titile>
+					<ChoiceFrom />
+					<ChoiceBefore />
+					<Button name='Применить' />
+				</ContainerFilter>
 
-				<div className={s.search}></div>
-				<div className={s.list_job}></div>
-			</div>
-		</div>
+				<InnerContent>
+					<InputHeader>
+						<InputSearch />
+					</InputHeader>
+					<ListJob>
+						<JobInfo>
+							<InfoLink>
+								<LinkTitle to=''>Designer manager</LinkTitle>
+								<ImgStar src={githubIcon} alt='starFalse' />
+							</InfoLink>
+							<InfoItems>
+								<InfoText>
+									<Wages>з/п 7000 rub </Wages>
+									<Ul>
+										<Li>Полный рабочий день</Li>
+									</Ul>
+								</InfoText>
+								<InfoMap>
+									<ImgStar src={githubIconMap} alt='map' />
+									<City>Moscow</City>
+								</InfoMap>
+							</InfoItems>
+						</JobInfo>
+						<Pages>
+							<Pagination total={3} />
+						</Pages>
+					</ListJob>
+				</InnerContent>
+			</Container>
+		</Wrapper>
 	)
 }

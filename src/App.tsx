@@ -1,7 +1,16 @@
 import { FC } from 'react'
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import s from './App.module.css'
+import {
+	Body,
+	H1,
+	H3,
+	Headers,
+	Item,
+	LogoSvg,
+	Menu,
+	NavbarLink,
+} from './App.style'
 import Header from './components/Header/Header'
 import githubIcon from './components/put/assets/union.svg'
 import { Favorites } from './pages/Favorites'
@@ -11,33 +20,32 @@ import { JobPage } from './pages/JobPage/JobPage'
 const App: FC = () => {
 	return (
 		<BrowserRouter>
-			<div className={s.header}>
-				<div className={s.logo_svg}>
+			<Headers>
+				<LogoSvg>
 					<img src={githubIcon} alt='union' />
-					Jobored
-				</div>
-
-				<ul className={s.header_menu}>
-					<li className={s.header_item}>
-						<NavLink className={s.active} to='/jobPage'>
-							Поиск Вакансий
-						</NavLink>
-					</li>
-					<li className={s.header_item}>
-						<NavLink className={s.active} to='/favorites'>
-							Избранные
-						</NavLink>
-					</li>
-				</ul>
-			</div>
-			<div className={s.body}>
+					<H1>Jobored</H1>
+				</LogoSvg>
+				<Menu>
+					<Item>
+						<NavbarLink to='/jobPage'>
+							<H3>Поиск Вакансий</H3>
+						</NavbarLink>
+					</Item>
+					<Item>
+						<NavbarLink to='/favorites'>
+							<H3>Избранные</H3>
+						</NavbarLink>
+					</Item>
+				</Menu>
+			</Headers>
+			<Body>
 				<Routes>
 					<Route path='/' element={<Header />} />
 					<Route path='/jobPage' element={<JobPage />} />
 					<Route path='/favorites' element={<Favorites />} />
 					<Route path='/favorites-empty' element={<FavoritesEmpty />} />
 				</Routes>
-			</div>
+			</Body>
 		</BrowserRouter>
 	)
 }
