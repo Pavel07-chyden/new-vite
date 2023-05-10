@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import {
+	ButtonLink,
 	Container,
-	Div,
 	H1,
 	ImgBig,
 	Items,
@@ -13,13 +13,11 @@ export const FavoritesEmpty: FC = () => {
 	return (
 		<Container>
 			<Items>
-				<Div>
-					<ImgBig src={githubIcon} alt='frame' />
-				</Div>
+				<ImgBig src={githubIcon} alt='frame' />
 				<H1>Упс, здесь еще ничего нет!</H1>
-				<Div>
+				<ButtonLink>
 					<LinkJob to='/jobPage'>Поиск Вакансий</LinkJob>
-				</Div>
+				</ButtonLink>
 			</Items>
 		</Container>
 	)

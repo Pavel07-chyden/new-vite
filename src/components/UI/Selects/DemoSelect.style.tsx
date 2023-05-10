@@ -169,4 +169,8 @@ export const Pages = styled.div`
 	display: flex;
 	margin-top: 40px;
 	justify-content: center;
+
+	&:control: {
+		background: var(--Blue-Main-500);
+	}
 `

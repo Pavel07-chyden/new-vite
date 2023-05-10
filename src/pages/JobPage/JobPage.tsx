@@ -1,8 +1,7 @@
-import { Pagination } from '@mantine/core'
 import { FC } from 'react'
 import { Button } from '../../components/UI/Button/StyleButton'
-
 import { InputSearch } from '../../components/UI/Input/InputSearch'
+import { Paginations } from '../../components/UI/Paginations/Paginations'
 import { DemoSelect } from '../../components/UI/Selects/DemoSelect'
 import {
 	City,
@@ -78,10 +77,10 @@ export const JobPage: FC = () => {
 								</InfoMap>
 							</InfoItems>
 						</JobInfo>
-						<Pages>
-							<Pagination total={3} />
-						</Pages>
 					</ListJob>
+					<Pages>
+						<Paginations />
+					</Pages>
 				</InnerContent>
 			</Container>
 		</Wrapper>

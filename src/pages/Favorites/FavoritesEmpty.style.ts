@@ -8,25 +8,29 @@ export const Container = styled.div`
 `
 export const Items = styled.div`
 	display: flex;
-	flex-direction: column;
-`
-
-export const Div = styled.div`
-	display: flex;
 	justify-content: center;
-	padding: 32px;
+	flex-direction: column;
 `
 export const ImgBig = styled.img`
 	max-width: 327px;
+	padding-bottom: 30px;
 `
 export const H1 = styled.h1`
 	font-weight: 700;
 	font-size: 24px;
 	color: #343a40;
+	padding-bottom: 30px;
 `
+
+export const ButtonLink = styled.div``
+
 export const LinkJob = styled(NavLink)`
+	display: block;
+	display: flex;
+	margin: 0 auto;
 	font-weight: 600;
 	font-size: 14px;
+	width: 164px;
 	color: var(--Blue-Main-500);
 	text-decoration: none;
 	padding: 10px 24px;
