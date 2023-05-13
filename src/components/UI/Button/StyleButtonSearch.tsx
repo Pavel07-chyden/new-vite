@@ -7,6 +7,8 @@ export const StyleButtonSearch = styled.button`
 	font-weight: 400;
 	background: var(--Blue-Main-500);
 	width: 83px;
+	height: 32px;
+	align-items: center;
 	padding: 5.5px 20px;
 	text-decoration: none;
 	color: var(--white);

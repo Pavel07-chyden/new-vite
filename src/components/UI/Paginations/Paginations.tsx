@@ -10,6 +10,11 @@ export const Paginations = () => {
 					'&[data-active]': {
 						background: 'var(--Blue-Main-500)',
 					},
+					fontWeights: '400',
+					fontSize: '16px',
+					width: '16px',
+					height: '32px',
+					fontFamily: 'Roboto',
 				},
 			}}
 		/>

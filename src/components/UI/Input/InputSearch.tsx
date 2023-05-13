@@ -6,7 +6,7 @@ export const InputSearch = () => {
 	return (
 		<Input
 			icon={<IconSearch size='1rem' />}
-			placeholder='Your twitter'
+			placeholder='Введите название вакансии'
 			rightSection={<ButtonSearch name='Поиск' />}
 			styles={{
 				rightSection: {
@@ -15,7 +15,10 @@ export const InputSearch = () => {
 				input: {
 					radius: '8px',
 					width: '773px',
-					padding: '0 12px',
+					height: '48px',
+					padding: '0 12px 0 12px',
+					fontSize: '14px',
+					fontFamily: 'Inter',
 				},
 			}}
 		/>

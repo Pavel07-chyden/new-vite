@@ -1,23 +1,14 @@
 import { FC } from 'react'
-import {
-	ButtonLink,
-	Container,
-	H1,
-	ImgBig,
-	Items,
-	LinkJob,
-} from './FavoritesEmpty.style'
-import githubIcon from '/src/components/put/assets/frame.svg'
+import { Icon } from '../../components/UI/Icon/Icon'
+import { Container, H1, Items, LinkJob } from './FavoritesEmpty.style'
 
 export const FavoritesEmpty: FC = () => {
 	return (
 		<Container>
 			<Items>
-				<ImgBig src={githubIcon} alt='frame' />
+				<Icon name='frame' />
 				<H1>Упс, здесь еще ничего нет!</H1>
-				<ButtonLink>
-					<LinkJob to='/jobPage'>Поиск Вакансий</LinkJob>
-				</ButtonLink>
+				<LinkJob to='/jobPage'>Поиск Вакансий</LinkJob>
 			</Items>
 		</Container>
 	)

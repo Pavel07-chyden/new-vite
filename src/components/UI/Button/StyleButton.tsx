@@ -7,6 +7,7 @@ export const StyleButton = styled.button`
 	font-weight: 500;
 	background: var(--Blue-Main-500);
 	width: 275px;
+	gap: 10px;
 	padding: 9.5px 98.5px;
 	text-decoration: none;
 	color: var(--white);

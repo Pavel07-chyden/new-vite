@@ -14,10 +14,6 @@ export const LogoSvg = styled.div`
 	gap: 8px;
 	font-weight: 900;
 `
-export const ImgIcon = styled.img`
-	width: 30px;
-`
-
 export const H1 = styled.h1`
 	font-weight: 600;
 	font-size: 24px;
