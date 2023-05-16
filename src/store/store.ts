@@ -3,9 +3,11 @@ import { useDispatch } from 'react-redux'
 import { combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import appReducer from './reducers/app-reducer'
+import { usersReducer } from './reducers/users-reducer'
 
 const rootReducer = combineReducers({
 	app: appReducer,
+	users: usersReducer,
 })
 
 export type RootReducerType = typeof rootReducer
@@ -20,5 +22,5 @@ export type AppRootStateType = ReturnType<RootReducerType>
 //@ts-ignore
 window.store = store
 
-type AppDispatchType = typeof store.dispatch
+export type AppDispatchType = typeof store.dispatch
 export const useAppDispatch = () => useDispatch<AppDispatchType>()

@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { GetApplication } from '../../api/auth-api'
 import { Button } from '../../components/UI/Button/StyleButton'
 import { Icon } from '../../components/UI/Icon/Icon'
 import { InputSearch } from '../../components/UI/Input/InputSearch'
@@ -50,6 +51,7 @@ export const JobPage: FC = () => {
 					<ChoiceBefore />
 					<Button name='Применить' />
 				</ContainerFilter>
+				<GetApplication />
 
 				<InnerContent>
 					<InputHeader>
