@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios'
 import { instance } from '../api/axios-instance'
-import { AuthResponse } from '../moduls/response/AutheResponse'
+import { AuthResponse } from '../modules/response/AutheResponse'
 
 export const authApi = {
 	login(email: string, password: string): Promise<AxiosResponse<AuthResponse>> {

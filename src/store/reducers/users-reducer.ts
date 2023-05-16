@@ -1,5 +1,5 @@
 import { jobAPI } from '../../api/axios-instance'
-import { IUser } from '../../moduls/IUser'
+import { IUser } from '../../modules/IUser'
 import { AppDispatchType } from '../store'
 
 enum APP_ACTIONS_TYPES {
