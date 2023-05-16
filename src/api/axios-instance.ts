@@ -23,8 +23,6 @@ export const jobAPI = {
 	searchFor: () => instance.get('/clients/'),
 	// Компания
 	searchForId: (id: string) => instance.get(`/clients/:${id}`),
-	// DELETE - снять блокировку
-	unlock: () => (id: string) => instance.delete(`/clients/${id}/block/`),
 	//Список избранных вакансий
 	listElected: () => instance.get('/favorites/'),
 	// Избранные вакансии (пакетная обработка)

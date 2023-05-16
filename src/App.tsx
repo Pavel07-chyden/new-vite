@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
 import {
 	Body,
 	H1,

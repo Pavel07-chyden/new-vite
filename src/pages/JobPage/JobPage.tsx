@@ -50,7 +50,6 @@ export const JobPage: FC = () => {
 					<ChoiceBefore />
 					<Button name='Применить' />
 				</ContainerFilter>
-
 				<InnerContent>
 					<InputHeader>
 						<InputSearch />

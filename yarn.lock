@@ -4055,6 +4055,44 @@ __metadata:
   languageName: node
   linkType: hard
 
+"startup_summer@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "startup_summer@workspace:."
+  dependencies:
+    "@emotion/react": ^11.10.8
+    "@mantine/core": ^6.0.10
+    "@mantine/hooks": ^6.0.10
+    "@reduxjs/toolkit": ^1.9.5
+    "@rollup/pluginutils": ^5.0.2
+    "@tabler/icons-react": ^2.17.0
+    "@types/axios": ^0.14.0
+    "@types/react": ^18.0.28
+    "@types/react-dom": ^18.0.11
+    "@types/react-redux": ^7.1.25
+    "@types/react-router-dom": ^5.3.3
+    "@types/redux": ^3.6.0
+    "@types/redux-thunk": ^2.1.0
+    "@types/styled-components": ^5.1.26
+    "@typescript-eslint/eslint-plugin": ^5.57.1
+    "@typescript-eslint/parser": ^5.57.1
+    "@vitejs/plugin-react": ^4.0.0
+    axios: ^1.4.0
+    eslint: ^8.38.0
+    eslint-plugin-react-hooks: ^4.6.0
+    eslint-plugin-react-refresh: ^0.3.4
+    gh-pages: ^5.0.0
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-redux: ^8.0.5
+    react-router-dom: ^6.11.0
+    styled-components: ^5.3.10
+    toolkit: ^1.5.4
+    typescript: ^5.0.2
+    vite: ^4.3.2
+    vite-plugin-svgr: ^3.2.0
+  languageName: unknown
+  linkType: soft
+
 "string-width@npm:^1.0.2 || 2 || 3 || 4, string-width@npm:^4.2.3":
   version: 4.2.3
   resolution: "string-width@npm:4.2.3"
@@ -4227,44 +4265,6 @@ __metadata:
   checksum: e25c235305b82c43f1d64a67a71226c406b00281755e4c2c4f3b1d0b09c687a535dd3c4483327f949f28bb89dc400a0bc5e5b749054f4b99f49ebfe48ba36496
   languageName: node
   linkType: hard
-
-"ts-project@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "ts-project@workspace:."
-  dependencies:
-    "@emotion/react": ^11.10.8
-    "@mantine/core": ^6.0.10
-    "@mantine/hooks": ^6.0.10
-    "@reduxjs/toolkit": ^1.9.5
-    "@rollup/pluginutils": ^5.0.2
-    "@tabler/icons-react": ^2.17.0
-    "@types/axios": ^0.14.0
-    "@types/react": ^18.0.28
-    "@types/react-dom": ^18.0.11
-    "@types/react-redux": ^7.1.25
-    "@types/react-router-dom": ^5.3.3
-    "@types/redux": ^3.6.0
-    "@types/redux-thunk": ^2.1.0
-    "@types/styled-components": ^5.1.26
-    "@typescript-eslint/eslint-plugin": ^5.57.1
-    "@typescript-eslint/parser": ^5.57.1
-    "@vitejs/plugin-react": ^4.0.0
-    axios: ^1.4.0
-    eslint: ^8.38.0
-    eslint-plugin-react-hooks: ^4.6.0
-    eslint-plugin-react-refresh: ^0.3.4
-    gh-pages: ^5.0.0
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-redux: ^8.0.5
-    react-router-dom: ^6.11.0
-    styled-components: ^5.3.10
-    toolkit: ^1.5.4
-    typescript: ^5.0.2
-    vite: ^4.3.2
-    vite-plugin-svgr: ^3.2.0
-  languageName: unknown
-  linkType: soft
 
 "tslib@npm:^1.8.1":
   version: 1.14.1
