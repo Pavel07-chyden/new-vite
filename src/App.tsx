@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import {
 	Body,
@@ -18,7 +18,7 @@ import { JobPage } from './pages/JobPage/JobPage'
 
 const App: FC = () => {
 	return (
-		<BrowserRouter>
+		<>
 			<Headers>
 				<LogoSvg>
 					<Icon name='union' />
@@ -45,7 +45,7 @@ const App: FC = () => {
 					<Route path='/favorites-empty' element={<FavoritesEmpty />} />
 				</Routes>
 			</Body>
-		</BrowserRouter>
+		</>
 	)
 }
 
