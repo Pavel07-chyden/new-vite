@@ -1,14 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
 
-export type GetApplicationType = {
-	access_token: string
-	refresh_token: string
-	ttl: number
-	expires_in: number
-	token_type: string
-	reg_user_resumes_count: number
-}
-
 export const instance: AxiosInstance = axios.create({
 	baseURL: 'https://startup-summer-2023-proxy.onrender.com/2.0',
 	headers: {
@@ -27,7 +18,7 @@ export const jobAPI = {
 		),
 	searchJob: () => instance.get('/vacancies/'),
 	// одна вакансия по id : vacancies/:id/
-	firstBy: (id: string) => instance.get(`/vacancies/:${id}`),
+	oneVacancyById: (id: string) => instance.get(`/vacancies/:${id}`),
 	// Поиск по компаниям
 	searchFor: () => instance.get('/clients/'),
 	// Компания
