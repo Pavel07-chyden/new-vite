@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { jobAPI } from './axios-instance'
+import { jobAPI } from '../../api/axios-instance'
 
 export const GetApplication = () => {
 	const [state, setState] = useState([])

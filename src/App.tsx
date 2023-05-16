@@ -11,8 +11,8 @@ import {
 	Menu,
 	NavbarLink,
 } from './App.style'
-import Header from './components/Header/Header'
-import { Icon } from './components/UI/Icon/Icon'
+import Header from './pages/components/Header/Header'
+import { Icon } from './pages/components/UI/Icon/Icon'
 import { FavoritesEmpty } from './pages/Favorites/FavoritesEmpty'
 import { JobPage } from './pages/JobPage/JobPage'
 
