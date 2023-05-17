@@ -1,26 +1,23 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { useDispatch } from 'react-redux'
-import { combineReducers } from 'redux'
-import thunk from 'redux-thunk'
-import appReducer from './reducers/app-reducer'
-import { usersReducer } from './reducers/users-reducer'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+import { searchVacanciesReducer } from '../components/searchVacancies/searchVacancies.slice'
+import { authReducer } from './slice/auth'
 
 const rootReducer = combineReducers({
-	app: appReducer,
-	users: usersReducer,
+	auth: authReducer,
+	searchVacancies: searchVacanciesReducer,
 })
 
-export type RootReducerType = typeof rootReducer
-
-export const store = configureStore({
+const store = configureStore({
 	reducer: rootReducer,
-	middleware: getDefaultMiddleware => getDefaultMiddleware().prepend(thunk),
 })
-export type AppRootStateType = ReturnType<RootReducerType>
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-window.store = store
+export type AppDispatch = typeof store.dispatch
+export const useAppDispatch: () => AppDispatch = useDispatch
 
-export type AppDispatchType = typeof store.dispatch
-export const useAppDispatch = () => useDispatch<AppDispatchType>()
+export type AppRootStateType = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof store.getState>
+
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+
+export default store

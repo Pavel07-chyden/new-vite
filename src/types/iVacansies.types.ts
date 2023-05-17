@@ -32,7 +32,7 @@ export interface IVacancy {
 	vacancyRichText: string
 }
 
-export interface IAuthResponse {
+export interface IAutherResponse {
 	objects: IVacancy[]
 	total: number | null
 }

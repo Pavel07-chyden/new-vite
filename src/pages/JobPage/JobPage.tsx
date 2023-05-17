@@ -1,11 +1,12 @@
 import { FC } from 'react'
-import { Button } from '../components/UI/Button/StyleButton'
-import { Icon } from '../components/UI/Icon/Icon'
-import { InputSearch } from '../components/UI/Input/InputSearch'
-import { Paginations } from '../components/UI/Paginations/Paginations'
-import { DemoSelect } from '../components/UI/Selects/DemoSelect'
-import { ChoiceBefore } from '../components/UI/Selects/SelectBefore'
-import { ChoiceFrom } from '../components/UI/Selects/SelectChoice'
+import { GetApplication } from '../../components/GetApplication'
+import { Button } from '../../components/UI/Button/StyleButton'
+import { Icon } from '../../components/UI/Icon/Icon'
+import { InputSearch } from '../../components/UI/Input/InputSearch'
+import { Paginations } from '../../components/UI/Paginations/Paginations'
+import { DemoSelect } from '../../components/UI/Selects/DemoSelect'
+import { ChoiceBefore } from '../../components/UI/Selects/SelectBefore'
+import { ChoiceFrom } from '../../components/UI/Selects/SelectChoice'
 import {
 	City,
 	Close,
@@ -50,6 +51,7 @@ export const JobPage: FC = () => {
 					<ChoiceBefore />
 					<Button name='Применить' />
 				</ContainerFilter>
+				<GetApplication />
 				<InnerContent>
 					<InputHeader>
 						<InputSearch />

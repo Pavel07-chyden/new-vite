@@ -1,5 +1,10 @@
+import { Header } from '@mantine/core'
 import { FC } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import '../../common/app/index.css'
+import { Icon } from '../../components/UI/Icon/Icon'
+import { FavoritesEmpty } from '../../pages/Favorites/FavoritesEmpty'
+import { JobPage } from '../../pages/JobPage/JobPage'
 import {
 	Body,
 	H1,
@@ -10,10 +15,6 @@ import {
 	Menu,
 	NavbarLink,
 } from './App.style'
-import Header from './pages/components/Header/Header'
-import { Icon } from './pages/components/UI/Icon/Icon'
-import { FavoritesEmpty } from './pages/Favorites/FavoritesEmpty'
-import { JobPage } from './pages/JobPage/JobPage'
 
 const App: FC = () => {
 	return (

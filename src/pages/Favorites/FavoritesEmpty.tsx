@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Icon } from '../components/UI/Icon/Icon'
+import { Icon } from '../../components/UI/Icon/Icon'
 import { Container, H1, Items, LinkJob } from './FavoritesEmpty.style'
 
 export const FavoritesEmpty: FC = () => {
