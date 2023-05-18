@@ -7,7 +7,7 @@ import { DemoSelect } from '../../components/UI/Selects/DemoSelect'
 import { ChoiceBefore } from '../../components/UI/Selects/SelectBefore'
 import { ChoiceFrom } from '../../components/UI/Selects/SelectChoice'
 import { VacancyItems } from '../../components/VacansiesItem/VacansiesItem'
-import { getVacanciesType } from '../../store/slice/getVacansyes'
+import { getVacanciesType } from '../../store/slice/vacansyes'
 import { useAppSelector } from '../../store/store'
 import {
 	City,

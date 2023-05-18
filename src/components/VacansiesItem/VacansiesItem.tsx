@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { getVacansyes } from '../../store/slice/getVacansyes'
+import { getVacansyes } from '../../store/slice/vacansyes'
 import { useAppDispatch } from '../../store/store'
 
 export const VacancyItems: FC = () => {
