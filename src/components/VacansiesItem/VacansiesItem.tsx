@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { getVacansyes } from '../../store/slice/vacansyes'
+import { getVacancies } from '../../store/slice/vacansyes'
 import { useAppDispatch } from '../../store/store'
 
 export const VacancyItems: FC = () => {
@@ -8,7 +8,7 @@ export const VacancyItems: FC = () => {
 		<>
 			<button
 				onClick={() => {
-					dispatch(getVacansyes())
+					dispatch(getVacancies())
 				}}
 			>
 				PandonmnayButton

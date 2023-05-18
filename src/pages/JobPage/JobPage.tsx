@@ -7,7 +7,7 @@ import { DemoSelect } from '../../components/UI/Selects/DemoSelect'
 import { ChoiceBefore } from '../../components/UI/Selects/SelectBefore'
 import { ChoiceFrom } from '../../components/UI/Selects/SelectChoice'
 import { VacancyItems } from '../../components/VacansiesItem/VacansiesItem'
-import { getVacanciesType } from '../../store/slice/vacansyes'
+import { VacancyType } from '../../store/slice/vacansyes'
 import { useAppSelector } from '../../store/store'
 import {
 	City,
@@ -35,7 +35,7 @@ import {
 } from './JobPage.style'
 
 export const JobPage: FC = () => {
-	const lists = useAppSelector(state => state.lists.data.objects)
+	const lists = useAppSelector(state => state.vacancies.data.objects)
 	return (
 		<Wrapper>
 			<Container>
@@ -63,7 +63,7 @@ export const JobPage: FC = () => {
 					</InputHeader>
 
 					{lists &&
-						lists.map((o: getVacanciesType) => (
+						lists.map((o: VacancyType) => (
 							<JobInfo key={o.id}>
 								<InfoLink>
 									<LinkTitle to=''>{o.profession}</LinkTitle>

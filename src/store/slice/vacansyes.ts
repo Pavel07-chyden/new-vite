@@ -1,11 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { vacanciesApi } from '../../api/vacanscies.api'
+import { StatusType } from './auth'
 
-export type StatusType = 'idle' | 'pending' | 'succeeded' | 'failed'
-// export type VacanciesData = {
-// 	[key: string]: string
-// }
-type TypeWork = {
+type WorkType = {
 	id: number
 	title: string
 }
@@ -14,7 +11,7 @@ type CityType = {
 	title: string
 }
 
-export type getVacanciesType = {
+type VacancyType = {
 	id: number
 	payment_from: number
 	payment_to: number
@@ -22,21 +19,22 @@ export type getVacanciesType = {
 	profession: string
 	firm_name: string
 	town: CityType
-	type_of_work: TypeWork
-}
-export interface InitialStateType {
-	status: StatusType
-	data: {
-		objects: getVacanciesType[]
-		total: number
-	}
+	type_of_work: WorkType
 }
 
-export const getVacansyes = createAsyncThunk('users/getVacansyes', async () => {
+export type VacanciesType = {
+	objects: Array<VacancyType>
+	total: number
+}
+
+type InitialStateType = {
+	status: StatusType
+	data: VacanciesType
+}
+
+export const getVacancies = createAsyncThunk('users/getVacancies', async () => {
 	try {
-		const data = await vacanciesApi.getVacanciesApi()
-		console.log(data)
-		return data
+		return await vacanciesApi.getVacanciesApi()
 	} catch (e) {
 		console.log(e)
 	}
@@ -47,23 +45,26 @@ const initialState = {
 	data: {},
 } as InitialStateType
 
-const authSlice = createSlice({
-	name: 'auth',
+const vacanciesSlice = createSlice({
+	name: 'vacancies',
 	initialState,
 	reducers: {},
 	extraReducers: builder => {
-		builder.addCase(getVacansyes.pending, state => {
+		builder.addCase(getVacancies.pending, state => {
 			state.status = 'pending'
+			state.data = {} as VacanciesType
 		})
-
-		builder.addCase(getVacansyes.fulfilled, (state, lists) => {
-			state.data = lists.payload
+		builder.addCase(getVacancies.fulfilled, (state, { payload }) => {
 			state.status = 'succeeded'
+			if (payload) {
+				state.data = payload
+			}
 		})
-		builder.addCase(getVacansyes.rejected, state => {
+		builder.addCase(getVacancies.rejected, state => {
 			state.status = 'failed'
+			state.data = {} as VacanciesType
 		})
 	},
 })
 
-export const authDataReducer = authSlice.reducer
+export const vacanciesReducer = vacanciesSlice.reducer
