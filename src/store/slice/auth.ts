@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import axios from 'axios'
-import { API_URL, AuthType } from '../../api/api'
-import { authAPI } from '../../api/auth.api'
+import { favoritesAPI, instance } from '../../api/auth.api'
+import { authAPI, AuthResponse } from '../../api/instance'
 
 export type StatusType = 'idle' | 'pending' | 'succeeded' | 'failed'
 
 interface InitialStateType {
 	status: StatusType
-	tokens?: AuthType
+	data: any
+	tokens?: AuthResponse
 	isAuth: boolean
 }
 
@@ -26,18 +26,30 @@ export const getAccessTokenForApp = createAsyncThunk(
 
 export const checkAuth = createAsyncThunk('users/checkAuth', async () => {
 	try {
-		const res = await axios.get<AuthType>(
-			`${API_URL}/refresh_token/?refresh_token=${localStorage.getItem(
-				'refresh_token'
-			)}`,
-			{ withCredentials: true }
-		)
+		const res = await instance.get<AuthResponse>('/oauth2/refresh_token/', {
+			params: {
+				refresh_token: localStorage.getItem('refresh_token'),
+				client_id: 2356,
+				client_secret:
+					'v3.r.137440105.ffdbab114f92b821eac4e21f485343924a773131.06c3bdbb8446aeb91c35b80c42ff69eb9c457948',
+			},
+		})
 		localStorage.setItem('access_token', res.data.access_token)
 		localStorage.setItem('refresh_token', res.data.refresh_token)
 	} catch (e) {
 		console.log(e)
 	}
 })
+
+export const getAllVac = createAsyncThunk('users/checkAuth', async () => {
+	try {
+		const data = await favoritesAPI.getAll()
+		console.log(data)
+	} catch (e) {
+		console.log(e)
+	}
+})
+
 const initialState = {
 	status: 'idle',
 	isAuth: false,

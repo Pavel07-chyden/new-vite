@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { GetApplication } from '../../components/GetApplication'
 import { Button } from '../../components/UI/Button/StyleButton'
 import { Icon } from '../../components/UI/Icon/Icon'
 import { InputSearch } from '../../components/UI/Input/InputSearch'
@@ -7,6 +6,9 @@ import { Paginations } from '../../components/UI/Paginations/Paginations'
 import { DemoSelect } from '../../components/UI/Selects/DemoSelect'
 import { ChoiceBefore } from '../../components/UI/Selects/SelectBefore'
 import { ChoiceFrom } from '../../components/UI/Selects/SelectChoice'
+import { VacancyItems } from '../../components/VacansiesItem/VacansiesItem'
+import { getVacanciesType } from '../../store/slice/getVacansyes'
+import { useAppSelector } from '../../store/store'
 import {
 	City,
 	Close,
@@ -33,6 +35,7 @@ import {
 } from './JobPage.style'
 
 export const JobPage: FC = () => {
+	const lists = useAppSelector(state => state.lists.data.objects)
 	return (
 		<Wrapper>
 			<Container>
@@ -51,29 +54,35 @@ export const JobPage: FC = () => {
 					<ChoiceBefore />
 					<Button name='Применить' />
 				</ContainerFilter>
-				<GetApplication />
+
 				<InnerContent>
 					<InputHeader>
+						<VacancyItems />
+
 						<InputSearch />
 					</InputHeader>
-					<JobInfo>
-						<InfoLink>
-							<LinkTitle to=''>Designer manager</LinkTitle>
-							<Icon name='starFalse' />
-						</InfoLink>
-						<InfoItems>
-							<InfoText>
-								<Wages>з/п 7000 rub </Wages>
-								<Ul>
-									<Li>Полный рабочий день</Li>
-								</Ul>
-							</InfoText>
-							<InfoMap>
-								<Icon name='map' />
-								<City>Moscow</City>
-							</InfoMap>
-						</InfoItems>
-					</JobInfo>
+
+					{lists &&
+						lists.map((o: getVacanciesType) => (
+							<JobInfo key={o.id}>
+								<InfoLink>
+									<LinkTitle to=''>{o.profession}</LinkTitle>
+									<Icon name='starFalse' />
+								</InfoLink>
+								<InfoItems>
+									<InfoText>
+										<Wages>{o.currency}</Wages>
+										<Ul>
+											<Li>{o.type_of_work.title}</Li>
+										</Ul>
+									</InfoText>
+									<InfoMap>
+										<Icon name='map' />
+										<City>{o.town.title}</City>
+									</InfoMap>
+								</InfoItems>
+							</JobInfo>
+						))}
 					<Pages>
 						<Paginations />
 					</Pages>

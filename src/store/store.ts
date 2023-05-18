@@ -2,10 +2,12 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { searchVacanciesReducer } from '../components/searchVacancies/searchVacancies.slice'
 import { authReducer } from './slice/auth'
+import { authDataReducer } from './slice/getVacansyes'
 
 const rootReducer = combineReducers({
 	auth: authReducer,
 	searchVacancies: searchVacanciesReducer,
+	lists: authDataReducer,
 })
 
 const store = configureStore({

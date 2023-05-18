@@ -1,15 +1,18 @@
-import { FC, memo } from 'react'
-import { IVacancy } from '../../types/iVacansies.types'
+import { FC } from 'react'
+import { getVacansyes } from '../../store/slice/getVacansyes'
+import { useAppDispatch } from '../../store/store'
 
-interface PropsType {
-	vacancy: IVacancy
-	isCurrentVacancy?: boolean
+export const VacancyItems: FC = () => {
+	const dispatch = useAppDispatch()
+	return (
+		<>
+			<button
+				onClick={() => {
+					dispatch(getVacansyes())
+				}}
+			>
+				PandonmnayButton
+			</button>
+		</>
+	)
 }
-
-export const VacancyItems: FC<PropsType> = memo(
-	({ vacancy, isCurrentVacancy }) => {
-		const { id, profession, firm_name, ...restProps } = vacancy
-
-		return <></>
-	}
-)

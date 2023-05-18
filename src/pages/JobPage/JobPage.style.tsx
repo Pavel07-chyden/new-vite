@@ -105,6 +105,7 @@ export const JobInfo = styled.div`
 	height: 137px;
 	border: 1px solid var(--Grey-200);
 	background-color: var(--white);
+	margin-bottom: 16px;
 `
 export const InfoLink = styled.div`
 	display: flex;
