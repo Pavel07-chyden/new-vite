@@ -24,7 +24,7 @@ export type getVacanciesType = {
 	town: CityType
 	type_of_work: TypeWork
 }
-export interface InitialShowType {
+export interface InitialStateType {
 	status: StatusType
 	data: {
 		objects: getVacanciesType[]
@@ -45,7 +45,7 @@ export const getVacansyes = createAsyncThunk('users/getVacansyes', async () => {
 const initialState = {
 	status: 'idle',
 	data: {},
-} as InitialShowType
+} as InitialStateType
 
 const authSlice = createSlice({
 	name: 'auth',
